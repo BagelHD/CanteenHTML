@@ -1,0 +1,71 @@
+
+** Backend **
+
+[x] Create JSON files/Database
+  [x] Set up Firebase
+  [x] Populate user data JSON files
+  [x] Populate product data JSON file
+
+[x] Connect Firebase product data
+[x] Create cart functionality
+  [x] Refrence objects in database by identifier (Barcode/UCID) and then edit object
+    [x] Validate Barcode
+    [ ] Add/Removie products from cart
+      [x] Update cart total
+  [x] Checkout button
+    [x] Validate User
+    [x] Append cart and date to userData database
+    [x] Update Spent
+
+** Frontend **
+
+[x] Create main cart page with dynamic table
+  [x] Listen for barcode scan
+    [x] Process barcode scan and add item to cart
+[ ] Make it look good
+
+// later
+[ ] Create user section
+  [ ] Display total owed
+  [ ] Display
+
+[ ] Create admin section
+  [ ] Display a table of users and data
+  [ ] Create new users
+  [ ] add to a users total paid
+  [ ] Item Statistics
+
+
+
+
+
+
+===========================================================================
+
+  - Make it prety
+
+==========================================================================
+
+
+
+
+
+Data formats:
+
+productData {
+  *barcode:
+  *productName:
+  *salePrice:
+  totalSold:
+}
+
+userData {
+  *UCID:
+  firstName:
+  lastName:
+  totalSpent:
+  totalPaid:
+  cartHistory:
+}
+
+Cart = [[barcode, quantity, productName, salePrice, id, totalSold]]

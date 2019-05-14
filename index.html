@@ -1,0 +1,138 @@
+<html style="background-image: url(../assets/CHBackground.jpg); background-repeat:no-repeat">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College House Canteen</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../libraries/p5.js"></script>
+    <script src="../libraries/p5.dom.js"></script>
+    <script src="../libraries/p5.sound.js"></script>
+    <link rel="stylesheet" href="../libraries/skeleton.css">
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+
+  <body id='container'; style="background-color: rgba(255, 255, 255, 0.8); height: 100%; margin-left: 10%; margin-right: 10%; margin-top: 1%; margin-bottom: 1%;">
+
+
+
+
+    <div id='body' style="height: 100%;">
+
+      <header id ='title' style='text-align: center;'>
+            <h1 style="color:rgb(34, 137, 255);">College House Canteen</h1>
+      </header>
+
+        <table id= 'Cart' style='width: 80%;
+        margin-left: auto;
+        margin-right: auto;'>
+
+            <tr style="background-color: rgb(194, 194, 194);">
+                <th style='text-align: center;'>Quantity</th>
+                <th style='text-align: center;'>Product</th>
+                <th style='text-align: center;'>Price</th>
+            </tr>
+            
+            <tbody id= 'CartBody' class="TFtable">
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <th colspan="2" style="text-align: right;"> Total = </th>
+                <th>0.00</th>
+            </tfoot>
+
+            <style type="text/css">
+                .TFtable{
+                width:100%; 
+                border-collapse:collapse; 
+                }
+                .TFtable td{ 
+                padding:7px; border:#000000 1px solid;
+                }
+                /* provide some minimal visual accomodation for IE8 and below */
+                .TFtable tr{
+                background: #000000;
+                height: 2em;
+                }
+                /*  Define the background color for all the ODD background rows  */
+                .TFtable tr:nth-child(odd){ 
+                background: #dfedff;
+                height: 2em;
+                }
+                /*  Define the background color for all the EVEN background rows  */
+                .TFtable tr:nth-child(even){
+                background: #dfdfdf;
+                height: 2em;
+                }
+            </style>
+            
+        </table>
+        <div id='info'>
+          <p style='text-align: center; margin-left: 20%; margin-right: 20%;'>
+            1. Scan the products barcodes<br />
+            2. Enter UCID<br />
+            3. Checkout<br /><br />
+            Remove an item: click on the item row in the list to reduce the quantity of it<br />
+            Bills will be sent out every week or so and are paid by bank transfer.
+            If there are problems with this setup please use the provided book and message the canteen on Facebook. Thanks
+          </p>
+        </div>
+    </body>
+  </div>
+  <script>
+            
+    var table = document.getElementById("Cart"),rIndex,cIndex;
+     
+    // table rows
+    for(var i = 1; i < table.rows.length; i++)
+    {
+        // row cells
+        for(var j = 0; j < table.rows[i].cells.length; j++)
+        {
+            table.rows[i].cells[j].onclick = function()
+            {
+              i = this.parentElement.rowIndex;
+              if (table.rows[i].cells[0].innerHTML != '' && i != table.rows.length-1){
+                removeFromCart(i-1)
+                console.log("removing item from row", i)
+              }
+              else{
+                console.log("nothing to remove")
+              }
+              
+            };
+        }
+    }
+      
+  </script>
+</html>

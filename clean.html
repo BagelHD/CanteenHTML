@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College House Canteen</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../libraries/p5.js"></script>
+    <script src="../libraries/p5.dom.js"></script>
+    <script src="../libraries/p5.sound.js"></script>
+    <link rel="stylesheet" href="../libraries/skeleton.css">
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+  </head>
+
+  <div id='container'>
+    <header id ='title'>
+            <h1 style="color:rgb(34, 137, 255);">College House Canteen</h1>
+    </header>
+    <body id='body'>
+        <div id='subtitle'>
+            
+        </div>
+        <table id= 'Cart' style='width: 70%'>
+
+            <tr>
+                <th>Quantity</th>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+            
+            <tbody id= 'CartBody' class="TFtable">
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <th colspan="2"> Total = </th>
+                <th></th>
+            </tfoot>
+
+            <style type="text/css">
+                .TFtable{
+                width:100%; 
+                border-collapse:collapse; 
+                }
+                .TFtable td{ 
+                padding:7px; border:#000000 1px solid;
+                }
+                /* provide some minimal visual accomodation for IE8 and below */
+                .TFtable tr{
+                background: #000000;
+                height: 2em;
+                }
+                /*  Define the background color for all the ODD background rows  */
+                .TFtable tr:nth-child(odd){ 
+                background: #dfedff;
+                height: 2em;
+                }
+                /*  Define the background color for all the EVEN background rows  */
+                .TFtable tr:nth-child(even){
+                background: #dfdfdf;
+                height: 2em;
+                }
+            </style>
+            
+        </table>
+        <div id='info'>
+
+        </div>
+    </body>
+  </div>
+
+</html>
